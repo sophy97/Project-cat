@@ -1,77 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>🐈Cat's Behavior</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap"
+    rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
+    rel="stylesheet"/>
+    
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id"
+    content="686320599774-rqg1cegs7866vcn87pigs2gaa7qdno9d.apps.googleusercontent.com"/>
+  </head>
 
-
-</head>
-<body>
+  <body>
     <!-- pc:상단 메뉴바 , 탭:상단두줄 메뉴바, 모바일:상단 아이콘 메뉴바 -->
     <div class="header">
-        <a href="./index.html"><img src="./img/realcat.PNG" class="logocat"></a>
-        <h2 class="title">Cat's behavior</h2>
+      <a href="./index.html"><img src="./img/realcat.PNG" class="logocat" /></a>
+      <h2 class="title">Cat's behavior</h2>
+      <!-- 구글 로그인 가져오기, fi (현재 도메인 주소오류 있음) -->
+      <div class="g-signin2" data-onsuccess="onSignIn"></div>
     </div>
 
     <div class="nav">
-        <p class="mobile-menuicon">😺</p>
-        <ul class="menu">
-            <li><a onclick="fetchPage('01about.html')">소개</a></li>
-            <li><a onclick="fetchPage('02cats.html')">고양이 종류</a></li>
-            <li><a onclick="fetchPage('03action.html')">고양이 행동</a></li>
-            <li><a onclick="fetchPage('04commu.html')">커뮤니티</a></li>
-            <li><a onclick="fetchPage('05profile.html')">프로필</a></li>
-        </ul>
+      <p class="mobile-menuicon">😺</p>
+      <ul class="menu">
+        <li><a onclick="fetchPage('01about.html')">소개</a></li>
+        <li><a onclick="fetchPage('02cats.html')">고양이 종류</a></li>
+        <li><a onclick="fetchPage('03action.html')">고양이 행동</a></li>
+        <li><a onclick="fetchPage('04commu.html')">커뮤니티</a></li>
+        <li><a onclick="fetchPage('05profile.html')">프로필</a></li>
+      </ul>
     </div>
 
-<div class="grid main">
-    <div class="g-items grid-item1">
-    <iframe width="450px" height="300px" src="https://www.youtube.com/embed/GxAgoBq9wQI" title="live-alone"
-    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-    gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="main-grid">
+      <div class="g-items gitem1">
+        인덱스, 슬릭 삽입해서 냥이들 사진 슬라이드쇼
+      </div>
+      <div class="g-items gitem2">
+        <iframe width="450px" height="300px"
+          src="https://www.youtube.com/embed/GxAgoBq9wQI"
+          title="live-alone" frameborder="0" allow="accelerometer; autoplay; 
+          clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="g-items gitem3">2:냥 기사</div>
+      <div class="g-items gitem4">
+        <h3>
+          8월 8일은?
+          <a href="https://ko.wikipedia.org/wiki/%EC%84%B8%EA%B3%84_%EA%B3%A0%EC%96%91%EC%9D%B4%EC%9D%98_%EB%82%A0" target="_blank">
+            <img src="./img/free-neko.png" width="30px" class="icon-hover" />
+          </a>
+        </h3>
+        <img src="./img/냥이의날.jpg" width="70%" />
+      </div>
+      <div class="g-items gitem5">
+        <iframe
+          width="450px"
+          height="300px"
+          src="https://www.youtube.com/embed/2bD2-Ulxm8A"
+          title="sortof-cats"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <div class="g-items gitem6">5:냥 기사</div>
+      <div class="g-items gitem7">
+        <embed src="https://www.gdppcat.com/" width="100%" height="100%" type=""/>
+      </div>
     </div>
-    <div class="g-items grid-item2">
-    2:냥 기사
-    </div>
-    <div class="g-items grid-item3">
-    콘텐츠3:냥 이벤트
-    </div>
-    <div class="g-items grid-item4">
-    <iframe width="450px" height="300px" src="https://www.youtube.com/embed/2bD2-Ulxm8A" title="sortof-cats"
-    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-    gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <div class="g-items grid-item5">
-    5:반려동물기사
-    </div>
-    <div class="g-items grid-item6">
-    6:냥 이벤트
-    </div>
-</div>
-<br>
-    <div id='wrapper'>
-        <article></article>
+
+    <br />
+
+    <div id="wrapper">
+      <article></article>
     </div>
 
     <footer class="footer">
-        <h3>footer</h3>
+      <h3>footer</h3>
     </footer>
-    
+
     <script>
-    function fetchPage(name){
-    fetch(name).then(function(response){
-    response.text().then(function(text){
-    document.querySelector('article').innerHTML = text;
-    })
-    });
-}
+      function fetchPage(name) {
+        fetch(name).then(function (response) {
+          response.text().then(function (text) {
+            document.querySelector("article").innerHTML = text;
+          });
+        });
+      }
+
+      function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log("Name: " + profile.getName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail()); // This is null if the 'email' scope is not present.
+      }
     </script>
+    
     <script src="./js/login.js"></script>
-</body>
+
+  </body>
 </html>
